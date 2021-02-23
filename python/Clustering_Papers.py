@@ -2,16 +2,24 @@
 from __future__ import print_function
 import numpy as np
 import pandas as pd
+
 import nltk
+from nltk.stem.snowball import SnowballStemmer
+
+
 import re
 import os
 import codecs
+
 from sklearn import feature_extraction
-from nltk.stem.snowball import SnowballStemmer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import KMeans
-from sklearn.externals import joblib
+
+#from sklearn.externals import joblib
+import sklearn.externals
+import joblib
+
 import string
 
 import os  # for os.path.basename
@@ -23,10 +31,14 @@ from sklearn.manifold import MDS
 from scipy.cluster.hierarchy import ward, dendrogram
 from spellchecker import SpellChecker
 
+#### ---- download stopwords and punkt ---- ####
+nltk.download('stopwords')
+nltk.download('punkt')
+
 # define data path here
 data_path = './paper_dataset.txt'
 
-
+:q
 # This function filters a 'list of list', so that it only contains 'lists' of length 'size'
 def by_size(words, size):
     """Form a list
@@ -143,8 +155,7 @@ if __name__ == "__main__":
                                        min_df=0.30, stop_words='english',
                                        use_idf=True, tokenizer=tokenize_and_stem, ngram_range=(1, 3))
 
-    tfidf_matrix = tfidf_vectorizer.fit_transform(
-        abstracts)  # fit the vectorizer to synopses
+    tfidf_matrix = tfidf_vectorizer.fit_transform(abstracts)  # fit the vectorizer to synopses
 
     print(tfidf_matrix.shape)
     terms = tfidf_vectorizer.get_feature_names()
@@ -175,7 +186,7 @@ if __name__ == "__main__":
         print("Cluster %d words:" % i, end='')
 
         for ind in order_centroids[i, :6]:  # replace 6 with n words per cluster
-            print(' %s' % vocab_frame.ix[terms[ind].split(' ')].values.tolist()[
+            print(' %s' % vocab_frame.loc[terms[ind].split(' ')].values.tolist()[
                   0][0].encode('utf-8', 'ignore'), end=',')
         print()  # add whitespace
         print()  # add whitespace
