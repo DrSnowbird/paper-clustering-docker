@@ -1,0 +1,32 @@
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/developer/nltk_data...
+[nltk_data]   Unzipping corpora/stopwords.zip.
+[nltk_data] Downloading package punkt to /home/developer/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+there are 74873 items in vocab_frame
+/usr/local/lib/python3.6/dist-packages/sklearn/feature_extraction/text.py:386: UserWarning: Your stop_words may be inconsistent with your preprocessing. Tokenizing the stop words generated tokens ['abov', 'afterward', 'alon', 'alreadi', 'alway', 'ani', 'anoth', 'anyon', 'anyth', 'anywher', 'becam', 'becaus', 'becom', 'befor', 'besid', 'cri', 'describ', 'dure', 'els', 'elsewher', 'empti', 'everi', 'everyon', 'everyth', 'everywher', 'fifti', 'forti', 'henc', 'hereaft', 'herebi', 'howev', 'hundr', 'inde', 'mani', 'meanwhil', 'moreov', 'nobodi', 'noon', 'noth', 'nowher', 'onc', 'onli', 'otherwis', 'ourselv', 'perhap', 'pleas', 'sever', 'sinc', 'sincer', 'sixti', 'someon', 'someth', 'sometim', 'somewher', 'themselv', 'thenc', 'thereaft', 'therebi', 'therefor', 'togeth', 'twelv', 'twenti', 'veri', 'whatev', 'whenc', 'whenev', 'wherea', 'whereaft', 'wherebi', 'wherev', 'whi', 'yourselv'] not in stop_words.
+  'stop_words.' % sorted(inconsistent))
+(616, 12)
+# of terms:12
+['algorithm', 'approach', 'base', 'data', 'method', 'paper', 'present', 'problem', 'propos', 'result', 'set', 'use']
+3    144
+1    144
+2    142
+0     99
+4     87
+Name: cluster, dtype: int64
+
+======================
+Top terms per cluster:
+
+Cluster 0 words: b'problems', b'algorithm', b'data', b'propose', b'using', b'approach',
+
+Cluster 1 words: b'algorithm', b'using', b'data', b'propose', b'results', b'paper',
+
+Cluster 2 words: b'approach', b'using', b'set', b'propose', b'results', b'based',
+
+Cluster 3 words: b'data', b'set', b'using', b'algorithm', b'results', b'presents',
+
+Cluster 4 words: b'methods', b'using', b'data', b'results', b'based', b'propose',
+
+

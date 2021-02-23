@@ -6,7 +6,6 @@ import pandas as pd
 import nltk
 from nltk.stem.snowball import SnowballStemmer
 
-
 import re
 import os
 import codecs
@@ -38,7 +37,6 @@ nltk.download('punkt')
 # define data path here
 data_path = './paper_dataset.txt'
 
-:q
 # This function filters a 'list of list', so that it only contains 'lists' of length 'size'
 def by_size(words, size):
     """Form a list
