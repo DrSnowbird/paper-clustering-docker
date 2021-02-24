@@ -105,8 +105,8 @@ def tokenize_and_stem(text):
     # 2. Remove all stopwords and more_stopwords
     #stopwords = nltk.corpus.stopwords.words('english')
     filtered_tokens = [word for word in filtered_tokens if word not in stopwords]
-    stemmed_tokens = [stemmer.stem(t) for t in filtered_tokens]
-    #stemmed_tokens = [stemmer_.lemmatize(t) for t in filtered_tokens]
+    #stemmed_tokens = [stemmer.stem(t) for t in filtered_tokens]
+    stemmed_tokens = [stemmer_.lemmatize(t) for t in filtered_tokens]
     return stemmed_tokens
 
 def tokenize_only(text, new_stopwords=[]):
